@@ -1,5 +1,7 @@
 # Windows 系统优化工具集
 
+> **🌐 语言**: **中文** | [English](README_EN.md)
+
 ## 📋 项目简介
 
 本项目包含两个专业的 PowerShell 脚本，用于优化和净化 Windows 系统，移除不必要的预装应用并控制系统更新策略。
@@ -8,7 +10,7 @@
 
 ## 📁 文件说明
 
-### 1. `卸载系统自带垃圾应用.ps1`
+### 1. `卸载系统自带垃圾应用.ps1` (中文版) / `Remove-Windows-Bloatware.ps1` (英文版)
 **终极版 Windows 净化与优化脚本 v2.2**
 
 #### 功能特性
@@ -25,7 +27,7 @@
 - **🔧 其他微软应用**: 反馈中心、Skype、入门应用、便签等
 - **🛡️ 受保护应用**: Xbox相关组件、画图、录音机等（尝试卸载但可能失败）
 
-### 2. `彻底禁用Windows更新.ps1`
+### 2. `彻底禁用Windows更新.ps1` (中文版) / `Disable-Windows-Updates.ps1` (英文版)
 **Windows Update 安全策略控制脚本**
 
 #### 功能特性
@@ -54,18 +56,26 @@
 # 导航到脚本目录
 cd "脚本所在目录路径"
 
-# 运行卸载垃圾应用脚本
+# 运行卸载垃圾应用脚本（中文版）
 .\卸载系统自带垃圾应用.ps1
+# 或运行英文版
+.\Remove-Windows-Bloatware.ps1
 
-# 或运行更新控制脚本
+# 运行更新控制脚本（中文版）
 .\彻底禁用Windows更新.ps1
+# 或运行英文版
+.\Disable-Windows-Updates.ps1
 ```
 
 #### 方法三：批处理文件运行
 创建一个 `.bat` 文件来自动以管理员权限运行：
 ```batch
 @echo off
+REM 中文版
 powershell -Command "Start-Process PowerShell -ArgumentList '-ExecutionPolicy Bypass -File \"%~dp0卸载系统自带垃圾应用.ps1\"' -Verb RunAs"
+
+REM 英文版
+REM powershell -Command "Start-Process PowerShell -ArgumentList '-ExecutionPolicy Bypass -File \"%~dp0Remove-Windows-Bloatware.ps1\"' -Verb RunAs"
 ```
 
 ### 执行策略设置
@@ -191,7 +201,7 @@ A: 不会。脚本只移除非必要应用和修改更新策略，不触及系�
 
 ### 新手推荐流程
 1. **创建系统还原点** (控制面板 → 系统 → 系统保护)
-2. **右键点击** `卸载系统自带垃圾应用.ps1`
+2. **右键点击** `卸载系统自带垃圾应用.ps1` (中文版) 或 `Remove-Windows-Bloatware.ps1` (英文版)
 3. **选择** "使用 PowerShell 运行"
 4. **选择选项3** 一键净化模式
 5. **等待完成** 并重启系统
